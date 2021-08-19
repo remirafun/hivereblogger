@@ -272,7 +272,8 @@ public class HiWebProject {
         else task.limited++;
     }
     private static void doReblog(ReblogTask task, Post post) {
-        if(task.rebloggedDay >= task.limitDay || post.rebloggedBy.contains(task.reblogAccount)) return; 
+        if(post.rebloggedBy.contains(task.reblogAccount)) return; 
+        if(task.rebloggedDay >= task.limitDay) { task.limited++; return; }
         post.rebloggedBy.add(task.reblogAccount);
         doReblog(task, post.author, post.permlink);
     }
@@ -302,7 +303,7 @@ public class HiWebProject {
         });
     }
     public static void finishTask(ReblogTask task, Post post) {
-        if(task.rebloggedDay >= task.limitDay) return; 
+        if(task.rebloggedDay >= task.limitDay) { task.limited++; return; } 
         index.exec.execute(()->{
             try {
                 doReblog(task, post);
