@@ -1,0 +1,145 @@
+<div class="main" id="mainTasks">
+	<h4><span class="oi oi-spreadsheet"></span>&nbsp;Reblog Tasks</h4>
+	<table>
+	  <tr>
+		<th>Name</th>
+		<th>Daily Limit</th>
+		<th>Reblogged</th>
+		<th>Skipped</th>
+		<th>Actions</th>
+	  </tr>
+	 	<tbody id="ta">
+		<tbody>  
+	</table>
+	<br>
+	<span class="btn" onclick="showTask(null)" id="addButton"><span class="oi oi-plus"></span>&nbsp;Add Reblog Task</span>
+	<div id="hivePostButton" hidden>
+		<p>
+			Hive Reblogger requires posting authority to reblog posts. For more information you can see <a href="/faq">FAQ</a> 
+		</p>
+		<a class="btn" href="https://hivesigner.com/authorize/hivereblogger"><span class="oi oi-plus"></span>&nbsp;Grant Posting Authority</a>
+	</div>
+</div>
+<div class="main" id="mainTask" hidden="true">		
+	<h4><span class="oi oi-document"></span>&nbsp;Reblog Task</h4>
+	<div style="line-height:1.5;">
+	<div>
+		Task name:
+		<input type="text" name="taskName" id="taskName" maxlength="64" value="task1" placeholder="task name...">
+	</div>
+	<div><b>From:</b> <span style="color:#aaaaaa">(Enter account names without '@', tags without '#')</span></div>
+	<div>
+		vote of:
+		<input type="text" name="fromVote" id="fromVote" placeholder="account1 account2 ...">
+		<div style="padding-left:25px"><span style="color:#aaaaaa">vote weight [0,100] upvotes, [-100,-1] for downvotes</span><br>
+		from <input type="number" name="fromVoteMin" id="fromVoteMin" min="-100" max="100" value="0">
+		to <input type="number" name="fromVoteMax" id="fromVoteMax" min="-100" max="100" value="100">
+		</div>
+	</div>
+	<div>
+		author:
+		<input type="text" name="fromAuthor" id="fromAuthor" placeholder="account1 account2 ...">
+	</div>
+	<div>
+		first tag:
+		<input type="text" name="fromTag" id="fromTag" placeholder="tag1 community ...">
+	</div>
+	
+	<div><b>With:</b></div>
+	<div>
+		all title words:
+		<input type="text" name="withAllTitle" id="withAllTitle" placeholder="word1 word2...">
+	</div>
+	<div>
+		at least one title words:
+		<input type="text" name="withOneTitle" id="withOneTitle" placeholder="word1 word2...">
+	</div>
+	<div>
+		all title/content words:
+		<input type="text" name="withAllBody" id="withAllBody" placeholder="word1 word2...">
+	</div>
+	<div>
+		at least one title/content words:
+		<input type="text" name="withOneBody" id="withOneBody" placeholder="word1 word2...">
+	</div>
+	<div>
+		all tags:
+		<input type="text" name="withAllTag" id="withAllTag" placeholder="tag1 tag2 community...">
+	</div>
+	<div>
+		at least one tag:
+		<input type="text" name="withOneTag" id="withOneTag" placeholder="tag1 tag2 community...">
+	</div>
+	
+	<div><b>Without:</b></div>
+	<div>
+		any of title words:
+		<input type="text" name="withoutTitle" id="withoutTitle" placeholder="word1 word2...">
+	</div>
+	<div>
+		any of title/content words:
+		<input type="text" name="withoutBody" id="withoutBody" placeholder="word1 word2...">
+	</div>
+	<div>
+		any of tags:
+		<input type="text" name="withoutTag" id="withoutTag" placeholder="word1 word2...">
+	</div>
+	
+	<div><b>Limit:</b></div>
+	<div>
+		max <input type="number" name="limitDay" id="limitDay" min="0" max="10000" value="10"> reblogs per day.
+	</div>
+	<br>
+	<span class="btn" onclick="postTask()"><span class="oi oi-plus"></span>&nbsp;<span id="okBtn">Add Task</span></span>
+	<span class="btn" onclick="showX(0)"><span class="oi oi-share"></span>&nbsp;<span id="okBtn">Back</span></span>
+	</div>
+</div>
+
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 style="color:#6c4507;margin: 2px 0px;">Confirm</h3>
+    <p id="modalText"></p>
+    <label id="okModal" class="btn" onclick="okModal()">Ok</label>
+    <label id="closeModal" class="btn" onclick="closeModal()">Close</label>
+  </div>
+</div>
+
+<script>
+var modalOkFunc = null;
+(function() {
+	var modal = document.getElementById("modal");
+	var span = document.getElementsByClassName("close")[0];
+	span.onclick = function() {
+	  	modal.style.display = "none";
+	}
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+		modal.style.display = "none";
+	  }
+	} 
+})();
+function showModal(msg,fn=null) {
+	var modal = document.getElementById("modal");
+	modal.style.display = "block";
+	var modalText = document.getElementById("modalText");
+	modalText.innerHTML = msg;
+	modalOkFunc = fn;
+}
+function okModal() {
+	closeModal();
+	if(modalOkFunc != null) modalOkFunc(); 
+}
+function closeModal() {
+	var modal = document.getElementById("modal");
+	modal.style.display = "none";
+}
+initReblogger();
+</script>
+
+
+
+
+
+
+

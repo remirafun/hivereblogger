@@ -1,0 +1,14 @@
+
+<div class="main">
+	<div class="center" id="msg"><h1>Logging in...</h1>You will be automatically redirected shortly...</div>
+</div>
+<script>
+doHSLogin(function(ok) {
+	window.location.replace("/");
+},
+function(err) {
+	console.log(err);
+	document.getElementById("msg").innerHTML = "Could not log in..."
+});
+</script>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/web/Conf.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/db/data/DBUtils.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/web/Utils.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/web/WebLog.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/db/data/Null.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/web/impl/netty/FullHttpRequestHandler.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/db/data/DB.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/db/data/DataModel.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/db/data/TableModel.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/TestServer.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/web/ConfFile.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/web/WebFiles.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/stats/IStats.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/web/impl/netty/WebBridgeNetty.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/db/data/Unique.java</file>
+            <file>file:/media/leo/Kaiba/workspaces/craft2/SimpleServer/src/simpleserver/db/DBRequest.java</file>
+        </group>
+    </open-files>
+</project-private>
